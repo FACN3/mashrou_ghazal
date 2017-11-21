@@ -12,7 +12,13 @@
 
   <div>
     <form action="">
-      <input type="">
+
+      <input list="data" id="query" name="data" type="text" onkeyup="autoComplete()">
+        <datalist id="data">
+
+        </datalist>
+    </input>
+
       <button type="submit">Search</button>
     </form>
   </div>
