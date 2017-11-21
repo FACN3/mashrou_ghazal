@@ -4,20 +4,6 @@ var port = 3000;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var server = http.createServer(handler);
 
 server.listen(port, function () {
