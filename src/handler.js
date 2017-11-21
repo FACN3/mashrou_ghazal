@@ -52,7 +52,15 @@ function handler(request, response) {
       }
     });
 
-  } else {
+  }
+else if(url==='/autoComplete'){
+
+		response.writeHead(200, {'Content-Type':'text/html'});
+		response.end('xhr works');
+
+		}
+
+   else {
     console.log('URL is ', url);
     response.writeHead(404, {
       'Content-Type': 'text/html'
