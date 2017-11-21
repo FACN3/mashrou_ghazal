@@ -2,7 +2,7 @@
   "name": "mashrou_ghazal",
   "version": "1.0.0",
   "description": "autocomplete",
-  "main": "index.js",
+  "main": "src/server.js",
   "directories": {
     "lib": "lib",
     "test": "test"
