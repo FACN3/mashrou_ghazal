@@ -1,0 +1,33 @@
+{
+  "name": "mashrou_ghazal",
+  "version": "1.0.0",
+  "description": "autocomplete",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/test.js | tap-spec",
+    "devStart": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN3/mashrou_ghazal.git"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "AGHP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN3/mashrou_ghazal/issues"
+  },
+  "homepage": "https://github.com/FACN3/mashrou_ghazal#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "nyc": "^11.3.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
