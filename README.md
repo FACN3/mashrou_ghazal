@@ -12,7 +12,7 @@
 
 ## Architecture Design
 
-![Architecture](/home/amirkh/Desktop/Founders and Coders/Week 4/mashrou_ghazal/images/autocomplete.jpg)
+![Architecture](/images/autocomplete.jpg)
 
 ### What is the project:
 Creating an Auto Complete search input that will give you a worl list depends on what you write in the search input
