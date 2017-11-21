@@ -7,12 +7,12 @@ function autoComplete() {
     if(xhr.readyState === 4 && xhr.status === 200){
       console.log(xhr.responseText);
 
-    } 
+    }
 
      };
 
-   
-     xhr.open('GET', '/autoComplete', true);
+    console.log('/autoComplete?search='+query);
+     xhr.open('GET', '/autoComplete?search='+query, true);
      xhr.send();
 
 
@@ -35,5 +35,3 @@ function autoComplete() {
   })
 
 }
-
-

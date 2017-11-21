@@ -1,6 +1,7 @@
 var fs = require('fs');
-var arr = [];
-
+var urlObject=require('url');
+autoComplete=require('./autocomplete');
+var arr=[];
 fs.readFile(__dirname + '/words.txt', (err, data) => {
   if (err) {
     console.log(err);
@@ -13,6 +14,9 @@ fs.readFile(__dirname + '/words.txt', (err, data) => {
 
 function handler(request, response) {
   var url = request.url;
+  var query=urlObject.parse(url,true).query.search;
+
+  console.log(query);
   if (url === '/') {
     console.log('path', __dirname + '/../public/index.html');
     fs.readFile(__dirname + '/../public/index.html', (err, data) => {
@@ -62,9 +66,13 @@ function handler(request, response) {
       }
     });
 
-  } else if(url==='/autoComplete'){
-		response.writeHead(200, {'Content-Type':'text/html'});
-		response.end('xhr works');
+  } else if(url.slice(0,13)==='/autoComplete'){
+
+
+
+     var search_result=autoComplete(query,arr);
+		response.writeHead(200, {'Content-Type':'application/javascript'});
+		response.end(JSON.stringify(search_result));
 
 		}
 
