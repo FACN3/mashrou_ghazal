@@ -1,39 +1,39 @@
 console.log('index.js is running');
 
 function autoComplete() {
-
+  var xhr = new XMLHttpRequest();
   var query=document.getElementById('query').value;
-  console.log(query);
+  xhr.onreadystatechange = function () {
+    if(xhr.readyState === 4 && xhr.status === 200){
+      console.log(xhr.responseText);
+
+    } 
+
+     };
+
+   
+     xhr.open('GET', '/autoComplete', true);
+     xhr.send();
+
 
   var parent = document.getElementById('data')
   while (parent.firstChild) {
-    parent.firstChild.remove();
-  }
+        parent.firstChild.remove();
+      }
 
   var data = ['abcd', 'bds', 'hello', 'tere', 'ware'];
-
-
-   if(query.indexOf('a')==0){
-     data = ['abcd', 'abds', 'ahello', 'aaere', 'aware'];
-
-   }else if(query.indexOf('b')==0) {
-
-     data = ['bcd', 'babds', 'bahello', 'baaere', 'baware'];
-
-
-   }
-
-
   data.forEach(function(element) {
 
-    console.log('autoComplete has been executed');
+          console.log('autoComplete has been executed');
 
-    var option = document.createElement('option');
+          var option = document.createElement('option');
 
-    option.value = element;
+          option.value = element;
 
-    parent.appendChild(option);
+          parent.appendChild(option);
 
   })
 
 }
+
+

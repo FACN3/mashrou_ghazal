@@ -1,5 +1,15 @@
 var fs = require('fs');
+var arr = [];
 
+fs.readFile(__dirname + '/words.txt', (err, data) => {
+  if (err) {
+    console.log(err);
+  }
+  else {
+    arr = data.toString().split("\n");
+    console.log(arr);
+  }
+})
 
 function handler(request, response) {
   var url = request.url;
@@ -52,7 +62,13 @@ function handler(request, response) {
       }
     });
 
-  } else {
+  } else if(url==='/autoComplete'){
+		response.writeHead(200, {'Content-Type':'text/html'});
+		response.end('xhr works');
+
+		}
+
+   else {
     console.log('URL is ', url);
     response.writeHead(404, {
       'Content-Type': 'text/html'
