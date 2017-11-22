@@ -51,7 +51,7 @@ function handler(request, response) {
     response.end('404 not found');
   }
 
-  function file_handler(url) {
+  function file_handler(url,response_path,contentType) {
 
 
     fs.readFile(__dirname + response_path, (err, data) => {
@@ -62,7 +62,7 @@ function handler(request, response) {
         response.end('Internal Server Error');
       } else {
         response.writeHead(200, {
-          'Content-Type': 'text/html'
+          'Content-Type': contentType
         })
         response.end(data);
       }
