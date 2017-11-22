@@ -1,16 +1,41 @@
 var fs = require('fs');
 var urlObject=require('url');
-autoComplete=require('./autocomplete');
+var autoComplete=require('./autocomplete');
 var arr=[];
+
+
 fs.readFile(__dirname + '/words.txt', (err, data) => {
   if (err) {
     console.log(err);
   }
   else {
     arr = data.toString().split("\n");
-    console.log(arr);
+    console.log(arr.splice(0,10));
+    //timer_test(arr);
+  console.log("autoComplete is done");
   }
 })
+
+// function timer_test (arr){
+//   console.log('array length', arr.length);
+//   var start = new Date();
+//   console.log('start', start.getTime());
+//   var test = arr.indexOf('pinacolin');
+//   var test = arr.indexOf('France');
+//   var test = arr.indexOf('pinacolic');
+//   var test = arr.indexOf('anaconda');
+//   var test = arr.indexOf('stream');
+//   var test = arr.indexOf('world');
+//   var test = arr.indexOf('sunshine');
+//   var test = arr.indexOf('place');
+//   var test = arr.indexOf('console');
+//   var end = new Date();
+//   console.log(test);
+//   console.log('end', end.getTime());
+//   //console.log('overall time:', end - start);
+// }
+
+
 
 function handler(request, response) {
   var url = request.url;
@@ -70,7 +95,7 @@ function handler(request, response) {
 
 
 
-     var search_result=autoComplete(query,arr);
+    var search_result=autoComplete(arr, query);
 		response.writeHead(200, {'Content-Type':'application/javascript'});
 		response.end(JSON.stringify(search_result));
 

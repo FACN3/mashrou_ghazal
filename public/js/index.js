@@ -1,37 +1,52 @@
 console.log('index.js is running');
 
+ var arr=[];
+ var parent = document.getElementById('data')
+ var word='';
+
 function autoComplete() {
   var xhr = new XMLHttpRequest();
-  var query=document.getElementById('query').value;
-  xhr.onreadystatechange = function () {
-    if(xhr.readyState === 4 && xhr.status === 200){
-      console.log(xhr.responseText);
+   word = document.getElementById('query').value;
+   arr = word.split(' ');
+  var query = arr[arr.length - 1];
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      //console.log(xhr.responseText);
+      var data = JSON.parse(xhr.response);
+      populate(data);
 
     }
 
-     };
+  };
 
-    console.log('/autoComplete?search='+query);
-     xhr.open('GET', '/autoComplete?search='+query, true);
-     xhr.send();
+  if (query) {
+    xhr.open('GET', '/autoComplete?search=' + query, true);
+    xhr.send();
+  }
 
+}
 
-  var parent = document.getElementById('data')
+function populate(data) {
+
   while (parent.firstChild) {
-        parent.firstChild.remove();
-      }
+    parent.firstChild.remove();
+  }
 
-  var data = ['abcd', 'bds', 'hello', 'tere', 'ware'];
-  data.forEach(function(element) {
 
-          console.log('autoComplete has been executed');
+  if (arr.length > 1) {
+    add = arr.slice(0, arr.length - 1).join(" ");
+    data = data.map(function(word) {
+      return word = add + " " + word;
 
-          var option = document.createElement('option');
+    });
 
-          option.value = element;
+  }
 
-          parent.appendChild(option);
-
-  })
+  $("#query").autocomplete({
+    minLength: 0,
+    source: function(request, response) {
+      response(data);
+    },
+  });
 
 }
