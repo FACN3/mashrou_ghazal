@@ -1,5 +1,6 @@
 console.log('index.js is running');
 
+
  var arr=[];
  var parent = document.getElementById('data')
  var word='';
@@ -14,6 +15,7 @@ function autoComplete() {
       //console.log(xhr.responseText);
       var data = JSON.parse(xhr.response);
       populate(data);
+
 
     }
 
