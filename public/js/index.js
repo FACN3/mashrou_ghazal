@@ -50,12 +50,4 @@ function populate(data) {
 
   });
 
-/*
-  $("#query").autocomplete({
-    minLength: 0,
-    source: function(request, response) {
-      response(data);
-    },
-  });
-*/
 }
