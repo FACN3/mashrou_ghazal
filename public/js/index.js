@@ -1,13 +1,6 @@
 console.log('index.js is running');
 
-<<<<<<< HEAD
-var query = document.getElementById('query').value;
-function autoComplete() {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if(xhr.readyState === 4 && xhr.status === 200){
-      console.log(xhr.responseText);
-=======
+
  var arr=[];
  var parent = document.getElementById('data')
  var word='';
@@ -22,7 +15,7 @@ function autoComplete() {
       //console.log(xhr.responseText);
       var data = JSON.parse(xhr.response);
       populate(data);
->>>>>>> master
+
 
     }
 
