@@ -1,6 +1,7 @@
 body {
-  background-image: url("https://orig00.deviantart.net/b170/f/2015/151/7/3/lamp_by_trancilian-d8vhy3s.gif");
-  background-color: #0CCFD3;
+  /*background-image: url("https://orig00.deviantart.net/b170/f/2015/151/7/3/lamp_by_trancilian-d8vhy3s.gif");*/
+  /*background-image: url("https://i.imgur.com/zPHhxeb.jpg");*/
+  background-color: #006A68;
   width: 90%;
 }
 
@@ -12,10 +13,18 @@ div p {
 
 }
 
+.bckcolor {
+  background-color: #008886;
+  padding: 10% 5%;;
+  border-width: 0.2px;
+  border-color: black;
+  border-style: solid;
+}
+
 div form {
 display: flex;
 justify-content: center;
-margin-top: 25%;
+margin-top: 15%;
 width: 100%;
 }
 
@@ -24,7 +33,7 @@ input[placeholder] {
   color: white;
   text-align: center;
   padding: 1% 25%;
-  margin-right: 2%;
+  margin-right: 1%;
 }
 
 button {
