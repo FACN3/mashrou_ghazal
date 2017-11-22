@@ -51,11 +51,12 @@ function populate(data) {
 
   }
 
-  $("#query").autocomplete({
-    minLength: 0,
-    source: function(request, response) {
-      response(data);
-    },
+  data.forEach(function(element){
+
+     var option=document.createElement('option');
+       option.value=element;
+       parent.appendChild(option);
+
   });
 
 }
