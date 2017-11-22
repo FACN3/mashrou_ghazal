@@ -6,12 +6,9 @@ var arr = [];
 
 fs.readFile(__dirname + '/words.txt', (err, data) => {
   if (err) {
-    console.log(err);
-  } else {
+  }
+  else {
     arr = data.toString().split("\n");
-    console.log(arr.splice(0, 10));
-    //timer_test(arr);
-    console.log("autoComplete is done");
   }
 })
 
@@ -48,14 +45,13 @@ function handler(request, response) {
     response.end(JSON.stringify(search_result));
 
   } else {
-    console.log('URL is ', url);
     response.writeHead(404, {
       'Content-Type': 'text/html'
     });
     response.end('404 not found');
   }
 
-  function file_handler(url) {
+  function file_handler(url,response_path,contentType) {
 
 
     fs.readFile(__dirname + response_path, (err, data) => {
@@ -66,7 +62,7 @@ function handler(request, response) {
         response.end('Internal Server Error');
       } else {
         response.writeHead(200, {
-          'Content-Type': 'text/html'
+          'Content-Type': contentType
         })
         response.end(data);
       }

@@ -1,4 +1,3 @@
-console.log('index.js is running');
 
 
  var arr=[];
@@ -12,7 +11,6 @@ function autoComplete() {
   var query = arr[arr.length - 1];
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      //console.log(xhr.responseText);
       var data = JSON.parse(xhr.response);
       populate(data);
 
