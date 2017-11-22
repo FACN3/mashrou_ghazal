@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <meta name "viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
   <title>Mashrou Ghazal</title>
+
 </head>
 
 <body>
@@ -13,8 +16,8 @@
   <div>
     <form action="">
 
-      <input placeholder="Auto Complete Text . ." list="data" id="query" name="data" type="text" onkeyup="autoComplete()">
-        <datalist id="data">
+      <input placeholder="Auto Complete Text . ." list="data" autocomplete="off" id="query" name="data" type="text" onkeyup="autoComplete()">
+        <datalist  id="data">
 
         </datalist>
     </input>
@@ -27,6 +30,9 @@
   <p class="copyright">© 2017 MASHROU GHAZAL ALL RIGHTS RESERVED</p>
 </div>
 </body>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script src="./js/index.js"></script>
 
 </html>
