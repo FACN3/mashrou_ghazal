@@ -31,3 +31,7 @@ Creating an Auto Complete search input that will give you a worl list depends on
 + Tape
 + Tap-spec
 + Nodemon
+
+#### Installing the packages:
+
+ `npm install` or `npm i`
