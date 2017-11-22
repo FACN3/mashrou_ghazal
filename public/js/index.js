@@ -5,7 +5,20 @@ function autoComplete() {
   var query=document.getElementById('query').value;
   xhr.onreadystatechange = function () {
     if(xhr.readyState === 4 && xhr.status === 200){
-      console.log(xhr.responseText);
+      //console.log(xhr.responseText);
+      var data=JSON.parse(xhr.response);
+      data.forEach(function(element) {
+
+              console.log('autoComplete has been executed');
+
+              var option = document.createElement('option');
+
+              option.value = element;
+
+              parent.appendChild(option);
+
+      });
+
 
     }
 
@@ -22,16 +35,5 @@ function autoComplete() {
       }
 
   var data = ['abcd', 'bds', 'hello', 'tere', 'ware'];
-  data.forEach(function(element) {
-
-          console.log('autoComplete has been executed');
-
-          var option = document.createElement('option');
-
-          option.value = element;
-
-          parent.appendChild(option);
-
-  })
 
 }
