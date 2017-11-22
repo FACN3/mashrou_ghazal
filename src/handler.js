@@ -1,6 +1,6 @@
 var fs = require('fs');
 var urlObject=require('url');
-autoComplete=require('./autocomplete');
+var autoComplete=require('./autocomplete');
 var arr=[];
 fs.readFile(__dirname + '/words.txt', (err, data) => {
   if (err) {

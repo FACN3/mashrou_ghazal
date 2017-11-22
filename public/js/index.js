@@ -1,8 +1,8 @@
 console.log('index.js is running');
 
+var query = document.getElementById('query').value;
 function autoComplete() {
   var xhr = new XMLHttpRequest();
-  var query=document.getElementById('query').value;
   xhr.onreadystatechange = function () {
     if(xhr.readyState === 4 && xhr.status === 200){
       console.log(xhr.responseText);
