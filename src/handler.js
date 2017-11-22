@@ -6,13 +6,10 @@ var arr=[];
 
 fs.readFile(__dirname + '/words.txt', (err, data) => {
   if (err) {
-    console.log(err);
   }
   else {
     arr = data.toString().split("\n");
-    console.log(arr.splice(0,10));
     //timer_test(arr);
-  console.log("autoComplete is done");
   }
 })
 
@@ -21,9 +18,7 @@ function handler(request, response) {
   var url = request.url;
   var query=urlObject.parse(url,true).query.search;
 
-  console.log(query);
   if (url === '/') {
-    console.log('path', __dirname + '/../public/index.html');
     fs.readFile(__dirname + '/../public/index.html', (err, data) => {
       if (err) {
         response.writeHead(500, {
@@ -82,7 +77,6 @@ function handler(request, response) {
 		}
 
    else {
-    console.log('URL is ', url);
     response.writeHead(404, {
       'Content-Type': 'text/html'
     });
