@@ -4,7 +4,7 @@ var autoComplete = require('./autocomplete');
 var arr = [];
 
 
-fs.readFile(__dirname + '/words.txt', (err, data) => {
+fs.readFile(__dirname + '/../dictionary/words.txt', (err, data) => {
   if (err) {
   }
   else {

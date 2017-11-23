@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 A
 a
 aa
@@ -255886,4 +255885,4 @@ plotting
 yan
 succeeding
 bizjournalshire
->>>>>>> master
+
