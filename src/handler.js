@@ -3,7 +3,6 @@ var urlObject = require('url');
 var autoComplete = require('./autocomplete');
 var arr = [];
 
-
 fs.readFile(__dirname + '/words.txt', (err, data) => {
   if (err) {
   }
@@ -12,18 +11,12 @@ fs.readFile(__dirname + '/words.txt', (err, data) => {
   }
 })
 
-
-
-
 function not_found(request,response){
   response.writeHead(404, {
     'Content-Type': 'text/html'
   });
   response.end('404 not found');
-
-
 }
-
 
 function api_handler(request,response,url){
 
@@ -35,14 +28,8 @@ function api_handler(request,response,url){
         'Content-Type': 'application/javascript'
       });
       response.end(JSON.stringify(search_result));
-
-
 }
-
-
   function file_handler(request,response,url,response_path,contentType) {
-
-
     fs.readFile(__dirname + response_path, (err, data) => {
       if (err) {
         response.writeHead(500, {
@@ -56,9 +43,6 @@ function api_handler(request,response,url){
         response.end(data);
       }
     });
-
-
-
   }
 
 

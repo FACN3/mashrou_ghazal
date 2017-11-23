@@ -4,7 +4,6 @@ function autoComplete(arr, query){
     if (word.startsWith(query)) {return word;}
   });
 return result.splice(0,10);
-
 }
 
 module.exports=autoComplete;
